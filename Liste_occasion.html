@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vélos d'Occasion Révisés & Garantis — Artisan du Cycle</title>
+    <style>
+        :root {
+            --bg-color: #1a231f; /* Vert très sombre / olive profond */
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f4f3ef; /* Blanc cassé doux */
+            --text-muted: #a0aab0;
+            --accent: #d4af37; /* Laiton / Or */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+ .logo-img {
+ max-width: 180px;
+ height: auto;
+ margin-bottom: 20px;
+ }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        header h1 span {
+            color: var(--accent);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Grille des cartes de vélos */
+        .bike-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* Carte Produit */
+        .bike-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .bike-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(214, 175, 55, 0.4);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .bike-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .bike-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .badge-guarantee {
+            align-self: flex-start;
+            background: rgba(214, 175, 55, 0.15);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .bike-title {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .bike-specs {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .bike-specs li {
+            padding: 4px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+        }
+
+        .bike-specs li:last-child {
+            border-bottom: none;
+        }
+
+        .bike-specs strong {
+            color: var(--text-main);
+        }
+
+        .btn-detail {
+            display: block;
+            text-align: center;
+            background: var(--accent);
+            color: #1a231f;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .btn-detail:hover {
+            background-color: #e5be48;
+            transform: translateY(-1px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+ <!-- Ton logo (nommé logo.png dans le même dossier) -->
+ <h1><img src="./logo.png" alt="Artisan du Cycle Logo" class="logo-img"> Artisan du <span>Cycle</span></h1>
+    <header>
+        <h1>Vélos d'Occasion <span>Révisés & Garantis</span></h1>
+        <p>Chaque vélo est entièrement démonté, révisé et sous garantie 6 mois à l'atelier.</p>
+    </header>
+
+    <main class="bike-grid">
+        <!-- Carte Vélo 1 : Vélo Italien Chromé -->
+        <article class="bike-card">
+            <img class="bike-image" src="./IMG_5985.JPG" alt="Vélo de Route Italien Chromé">
+            <div class="bike-content">
+                <span class="badge-guarantee">Révisé & Garanti 6 mois</span>
+                <h2 class="bike-title">Vélo de Route Italien Chromé</h2>
+                <ul class="bike-specs">
+                    <li><strong>Époque :</strong> Fin des années 90</li>
+                    <li><strong>Taille :</strong> M (52 x 52 cm) — ~10.5 kg</li>
+                    <li><strong>Cadre :</strong> Columbus ACCIAIO Chromovelato</li>
+                    <li><strong>Transmission :</strong> Campagnolo Triple (50/40/30)</li>
+                    <li><strong>Freins :</strong> Campagnolo Veloce</li>
+		    <li><strong>Prix :</strong> 350 € TTC</li>
+                </ul>
+                <a href="./chrome.html" class="btn-detail">Voir la fiche détaillée &rarr;</a>
+            </div>
+        </article>
+<!-- Carte Vélo 2 : Vélo GIANT PEloton -->
+        <article class="bike-card">
+            <img class="bike-image" src="./GIANT_GENERAL.JPG" alt="Vélo de Route Giant Peloton 7200">
+            <div class="bike-content">
+                <span class="badge-guarantee">Révisé & Garanti 6 mois</span>
+                <h2 class="bike-title">Vélo de Route Italien Chromé</h2>
+                <ul class="bike-specs">
+                    <li><strong>Époque :</strong> Fin des années 2000</li>
+                    <li><strong>Taille :</strong> M-L (56 x 56 cm) — ~10 kg</li>
+                    <li><strong>Cadre :</strong> CrMo Giant 4120 light</li>
+                    <li><strong>Transmission :</strong> Shimano Triple (50/40/30) et Campagnolo 7v</li>
+                    <li><strong>Freins :</strong> Campagnolo Veloce</li>
+		    <li><strong>Prix :</strong> 300 € TTC</li>
+                </ul>
+                <a href="./giant.html" class="btn-detail">Voir la fiche détaillée &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Tu pourras ajouter d'autres <article class="bike-card"> ici -->
+    </main>
+
+    <footer>
+        <p><a href="./index.html" class="back-link">&larr; Retour à l'accueil Artisan du Cycle</a></p>
+    </footer>
+</div>
+
+</body>
+</html>
